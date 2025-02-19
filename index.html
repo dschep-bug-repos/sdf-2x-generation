@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MapLibre GL</title>
+    <link
+      href="https://cdn.skypack.dev/maplibre-gl@5.1.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      #map {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script type="module">
+      import maplibregl from "https://cdn.skypack.dev/maplibre-gl@5.1.0";
+      const style = await (await fetch("https://tiles.openfreemap.org/styles/liberty")).json();
+      style.sprite = [
+        {
+          id: "default",
+          url: style.sprite,
+        },
+        {
+          id: "sprite-one",
+          url: new URL("./sprite-one", window.location).toString(),
+        },
+        {
+          id: "spreet",
+          url: new URL("./spreet", window.location).toString(),
+        },
+        {
+          id: "dschep_sprite-one",
+          url: new URL("./dschep_sprite-one", window.location).toString(),
+        },
+      ];
+      style.sources["debug-points"] = {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: [
+            {
+              type: "Feature",
+              properties: {
+                name: "sprite-one",
+              },
+              geometry: {
+                coordinates: [-1, 0],
+                type: "Point",
+              },
+            },
+            {
+              type: "Feature",
+              properties: {
+                name: "spreet",
+              },
+              geometry: {
+                coordinates: [0, 0],
+                type: "Point",
+              },
+            },
+            {
+              type: "Feature",
+              properties: {
+                name: "dschep_sprite-one",
+              },
+              geometry: {
+                coordinates: [1, 0],
+                type: "Point",
+              },
+            },
+          ],
+        },
+      };
+      style.layers.push({
+        id: "debug-points",
+        source: "debug-points",
+        type: "symbol",
+        layout: {
+          "text-field": ["get", "name"],
+          "text-anchor": "top",
+          "text-offset": [0, 2],
+          "text-font": ["Noto Sans Regular"],
+          "icon-image": [
+            "concat",
+            ["get", "name"],
+            ":airport",
+          ],
+        },
+        paint: {
+          "icon-halo-width": 2,
+          "icon-halo-color": "white",
+        },
+      });
+      const map = new maplibregl.Map({
+        container: "map",
+        style,
+        bounds: [-2, -1, 2, 1],
+      });
+      
+    </script>
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div
+      class="glitchButton"
+      style="position: fixed; top: 20px; right: 20px"
+    ></div>
+    <script src="https://button.glitch.me/button.js" defer></script>
+  </body>
+</html>
