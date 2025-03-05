@@ -6,9 +6,9 @@ ratio spritesheets.
 [My fork](https://github.com/dschep/sprite-one) of `@unvt/sprite-one` is patched to address this
 issue.
 
-### Issues / Pull Requests
+### Issues
 
-* [unvt/sprite-one#27](https://github.com/unvt/sprite-one/pull/27)
+* [unvt/sprite-one#29](https://github.com/unvt/sprite-one/issue/29)
 * [flother/spreet#86](https://github.com/flother/spreet/issues/86)
 
 ## Screenshots
