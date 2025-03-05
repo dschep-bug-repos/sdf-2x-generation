@@ -8,7 +8,7 @@ issue.
 
 ### Issues
 
-* [unvt/sprite-one#29](https://github.com/unvt/sprite-one/issue/29)
+* [unvt/sprite-one#29](https://github.com/unvt/sprite-one/issues/29)
 * [flother/spreet#86](https://github.com/flother/spreet/issues/86)
 
 ## Screenshots
