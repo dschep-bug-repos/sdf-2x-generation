@@ -9,7 +9,7 @@ issue.
 ### Issues
 
 * [unvt/sprite-one#29](https://github.com/unvt/sprite-one/issues/29)
-* [flother/spreet#86](https://github.com/flother/spreet/issues/86)
+* ~~[flother/spreet#86](https://github.com/flother/spreet/issues/86)~~ Fixed!
 
 ## Screenshots
 This is how things look with 1x sprites, as expected:
