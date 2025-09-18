@@ -15,7 +15,7 @@ issue.
 This is how things look with 1x sprites, as expected:
 ![](./1x.png)
 
-This is how things look with 0x sprites, with the existing sprite libraries showing a smaller
+This is how things look with 2x sprites, with the existing sprite libraries showing a smaller
 buffer
 ![](./2x.png)
 
